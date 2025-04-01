@@ -4,6 +4,7 @@ import pool from "./config/connectDB";
 import AuthRouter from "./routers/auth.router";
 import { VolunteerRouter } from "./routers/volunteer.router";
 import { AnimalsRouter } from "./routers/animals.router";
+import CampaignsRouter from "./routers/campaigns.router";
 const app = express();
 const port = 3000;
 app.use(cors());
@@ -28,6 +29,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/api/auth",AuthRouter);
 app.use("/api/volunteer", VolunteerRouter);
 app.use("/api/animals", AnimalsRouter);
+app.use("/api/campaign", CampaignsRouter);
 
 
 app.listen(port, () => {
